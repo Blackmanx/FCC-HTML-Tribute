@@ -5,22 +5,23 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Nova Flat' rel='stylesheet'>
 	<title>Tribute Page</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<main id="main">
-		<h1 id="title">Aaron Hillel Swartz</h1>
-		<h2>Hero of our Open World</h2>
+		<h1 class="titles" id="title">Aaron Hillel Swartz</h1>
+		<h2 class="titles">Hero of our Open World</h2>
 		<figure id="img-div">
-			<img id="image" src="https://images.nymag.com/news/features/swartz130211_560.jpg" alt="Aaron Swatz"
+			<img id="image" src="https://www.inred.gr/wp-content/uploads/2017/06/Aaron-Swartz.jpg" alt="Aaron Swatz"
 				srcset="">
 			<figcaption id="img-caption">
-				Aaroz Swatz at a Creative Commons event, <time>8<sup>th</sup> November,1986</time>
+				Aaron Swatz at a Creative Commons event, <time>8<sup>th</sup> November,1986</time>
 			</figcaption>
 		</figure>
-		<section id="tribute-info">
+		<section class="scroll" id="tribute-info">
 			<h3 class="div-title">Here's a list of things he should be known for:</h3>
 			<ul class="list-info">
 				<li>
@@ -31,40 +32,59 @@
 				</li>
 
 				<li>
-					<img src="http://lorempixum.com/100/100/nature/2" />
+					<img src="https://maxcdn.icons8.com/Share/icon/Programming/markdown1600.png" />
 					<h4>Markdown</h4>
 					<p>He was a major contributor of the lightweight markup language Markdown, which is used on websites
 						like Github or Reddit.</p>
 				</li>
 
 				<li>
-					<img src="http://lorempixum.com/100/100/nature/3" />
+					<img src="https://cdn.onlinewebfonts.com/svg/img_294320.png" />
 					<h4>Creative Commons</h4>
 					<p>He was involved very early with the Creative Commons company, </p>
 				</li>
 
 				<li>
-					<img src="http://lorempixum.com/100/100/nature/4" />
+					<img src="https://cdn.onlinewebfonts.com/svg/img_38919.png" />
 					<h4>Reddit</h4>
 					<p>He worked on reddit with his company Not a Bug, being given the title of co-founder and one
 						important developer.</p>
 				</li>
 				<li>
-					<img src="http://lorempixum.com/100/100/nature/4" />
-					<h4>Activism</h4>
+					<img src="https://www.freeiconspng.com/uploads/black-hacker-icon-0.png" />
+					<h4>Hacktivism</h4>
 					<p>The Guerrilla Open Access Manifesto was his thing. It is also what brought him to his demise,
 						after the US government pushed him to fall.</p>
 				</li>
 			</ul>
-			<blockquote>
-
+			<blockquote cite="Aaron Swartz">
+				“Information is power. But like all power, there are those who want to keep it for themselves.”
 			</blockquote>
-
-			<h3>If you want to know what else he did in his short life, you can check at <a
+			<hr>
+			<h3>If you want to ktransform: now what else he did in his short life, you can check at <a
 					href="https://en.wikipedia.org/wiki/Aaron_Swartz" target="_blank" rel="noopener noreferrer"
 					id="tribute-link">Wikipedia.</a></h3>
 		</section>
 	</main>
-</body>
+	<script>
+		function reveal() {
+			var scrolledElement = document.querySelectorAll(".scroll");
+
+			for (var i = 0; i < scrolledElement.length; i++) {
+				var windowHeight = window.innerHeight;
+				var elementTop = scrolledElement[i].getBoundingClientRect().top;
+				var elementVisible = 150;
+
+				if (elementTop < windowHeight - elementVisible) {
+					scrolledElement[i].classList.add("active");
+				} else {
+					scrolledElement[i].classList.remove("active");
+				}
+			}
+		}
+
+		window.addEventListener("scroll", reveal);
+	</script>
+	< </body>
 
 </html>
