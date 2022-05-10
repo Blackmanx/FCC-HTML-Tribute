@@ -10,6 +10,40 @@ body {
 	background-color: floralwhite;
 }
 
+blockquote {
+	display: block;
+	border-width: 2px 2px;
+	border-style: solid;
+	border-color: #aaa;
+	background-color: #eee;
+	padding: 1.5em;
+	margin: 2em 0;
+	position: relative;
+}
+
+blockquote:before {
+	content: '\201C';
+	position: absolute;
+	top: 0.25em;
+	left: 0.3em;
+	transform: translate(-50%, -50%);
+	background: transparent;
+	width: 3rem;
+	height: 2rem;
+	font: 4em/0.8em 'PT Sans', sans-serif;
+	color: #666;
+	text-align: center;
+}
+
+blockquote:after {
+	content: "\2013 \2003"
+		attr(cite);
+	display: block;
+	text-align: right;
+	font-size: 0.875em;
+	color: #e74c3c;
+}
+
 a {
 	text-decoration: none;
 	color: gray;
@@ -21,18 +55,19 @@ img {
 	height: 100%;
 	display: block;
 	margin: 0 auto;
+	background: transparent;
 }
 
 li img {
 	float: left;
-	margin: 0 15px 0 0;
+	margin: 0 0.8em 0 0;
 	width: 100px;
 	height: 100px;
 }
 
 p,
 div {
-	font: 200 12px/1.5 Georgia, Times New Roman, serif;
+	font: 200 calc(6px + 1vw) serif;
 
 }
 
@@ -53,16 +88,20 @@ h4 {
 h2 {
 	text-align: center;
 	margin-top: 0.5em;
-	font-size: 4vw;
+	font-size: 2rem;
 }
 
 .list-info {
 	margin-top: 2em;
 }
 
+
+
 #title {
 	text-align: center;
-	font-size: 7vw;
+	font-family: 'Nova Flat', Helvetica;
+	font-size: 4rem;
+	src: url(https://fonts.gstatic.com/s/novaflat/v22https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-begin/QdVUSTc-JgqpytEbVeb0viFl.woff2) format('woff2');
 }
 
 
@@ -71,14 +110,42 @@ h2 {
 	text-align: center;
 	background-color: whitesmoke;
 	padding: 4em;
-	width: 75%;
+	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 3em;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 #tribute-info {
 	width: 50%;
 	margin: 3em auto 0 auto;
 	text-align: center;
+}
+
+.titles {
+	animation: fadeIn 1s ease-out;
+}
+
+.scroll {
+	transform: translateY(150px);
+	opacity: 0;
+	transition: 1s all ease;
+}
+
+@keyframes fadeIn {
+	0% {
+		transform: translateY(-75%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+
+.scroll.active {
+	transform: translateY(0);
+	opacity: 1;
 }
